@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function Contact() {
@@ -10,21 +11,23 @@ export default function Contact() {
     >
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
-          src="/contact-bg.jpeg" // <-- save your background image in /public as contact-bg.jpg
+        <Image
+          src="/contact-bg.jpeg" // <-- make sure this is inside /public
           alt="Background"
-          className="w-full h-full object-cover"
+          fill
+          priority
+          className="object-cover"
         />
         {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-black/0"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-2xl px-6">
         <h2 className="text-4xl font-bold text-indigo-400 mb-4">Contact Me</h2>
         <p className="mb-6 text-gray-300">
-          I’m always open to networking, collaboration, or opportunities. Feel free
-          to reach out if you’d like to work together or just have a chat.
+          I’m always open to networking, collaboration, or opportunities. Feel
+          free to reach out if you’d like to work together or just have a chat.
         </p>
         <p className="mb-6 text-lg font-medium">
           📧 austriafrancisdaniel@gmail.com
@@ -39,7 +42,7 @@ export default function Contact() {
             Send Email
           </a>
           <a
-            href="/cv.pdf" // <-- add your CV file in /public/cv.pdf
+            href="/cv.pdf" // <-- place your CV file in /public/cv.pdf
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-lg transition"
@@ -50,10 +53,18 @@ export default function Contact() {
 
         {/* Social Icons */}
         <div className="flex justify-center space-x-6 text-2xl">
-          <a href="https://github.com/Francis-MQ" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/Francis-MQ"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaGithub className="hover:text-indigo-400 transition" />
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://linkedin.com/in/yourusername" // <-- update with your LinkedIn URL
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaLinkedin className="hover:text-indigo-400 transition" />
           </a>
           <a href="mailto:austriafrancisdaniel@gmail.com">
